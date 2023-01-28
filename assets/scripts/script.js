@@ -30,11 +30,11 @@ function generatePassword() {
 function copyPassword() {
 
     navigator.clipboard.writeText(novaSenha)
-    alert("Senha copiada com sucesso!")
+    alert("Senha copiada com sucesso! ")
     setTimeout(function () {
         containerPassword.classList.add('hide')
     }, 10000);
-
-
-
 }
+
+
+
