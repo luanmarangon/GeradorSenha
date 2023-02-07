@@ -18,6 +18,11 @@ body {
 .logo {
     max-width: 600px;
     margin-bottom: 24px;
+    transition: transform 0.5s;
+}
+
+.logo:hover{
+    transform: scale(1.20);
 }
 
 .container-input {
