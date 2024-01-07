@@ -32,6 +32,7 @@
         <span id="password" class="password"></span>
         <span class="tooltip">clique na sua senha para copiar.</span>
     </div>
+  
 
     <script src="assets/scripts/script.js"></script>
 </body>

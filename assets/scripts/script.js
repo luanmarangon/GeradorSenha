@@ -27,14 +27,43 @@ function generatePassword() {
     novaSenha = pass;
 }
 
+// function copyPassword() {
+
+//     navigator.clipboard.writeText(novaSenha)
+//     alert("Senha copiada com sucesso!")
+//     setTimeout(function () {
+//         containerPassword.classList.add('hide')
+//     }, 10000);
+// }
+
+
 function copyPassword() {
+    try {
+        // Obtém a senha que você deseja copiar
+        // var novaSenha = document.getElementById('password').value;
 
-    navigator.clipboard.writeText(novaSenha)
-    alert("Senha copiada com sucesso! ")
-    setTimeout(function () {
-        containerPassword.classList.add('hide')
-    }, 10000);
+        // Verifica se o navegador suporta a API Clipboard
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(novaSenha)
+                .then(function () {
+                    alert("Senha copiada com sucesso!");
+                })
+                .catch(function (err) {
+                    console.error('Erro ao copiar a senha: ', err);
+                    alert("Erro ao copiar a senha. Por favor, copie manualmente.");
+                });
+        } else {
+            // Se o navegador não suporta a API Clipboard, alerta o usuário
+            alert("Seu navegador não suporta a função de cópia automática. Por favor, copie manualmente.");
+        }
+
+        // Oculta o container após 10 segundos
+        setTimeout(function () {
+            containerPassword.classList.add('hide');
+        }, 10000);
+    } catch (error) {
+        console.error('Erro ao copiar a senha:', error);
+        alert("Erro ao copiar a senha. Por favor, copie manualmente.");
+    }
 }
-
-
 
